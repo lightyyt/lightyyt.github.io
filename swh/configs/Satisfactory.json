@@ -1,0 +1,11 @@
+{
+  "page_title": "Satisfactory",
+  "title": "Satisfactory",
+  "buttons":[
+    {
+      "name":"Wiki",
+      "image":"images/satisfactory_wiki.png",
+      "url":"https://satisfactory.wiki.gg"
+    }
+  ]
+}

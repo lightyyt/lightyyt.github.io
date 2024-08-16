@@ -1,0 +1,22 @@
+{
+  "title":"Steam Web Hub",
+  "colors":{
+    "bg": "#333",
+    "fg": "#DDD"
+  },
+  "buttons":[
+    {
+      "image":"images/google.png",
+      "url":"https://google.com",
+      "name":"Google"
+    }, {
+      "image":"images/youtube.png",
+      "url":"https://youtube.com",
+      "name":"Youtube"
+    }, {
+      "image":"images/piptube.png",
+      "url":"/piptube/",
+      "name":"PIPTube"
+    }
+  ]
+}

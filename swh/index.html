@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="swh.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <script src="../jquery.js"></script>
+  <title>Steam Web Hub</title>
+</head>
+<body>
+
+  <div id="loadingScreen">Loading
+  ...</div>
+  <h1 id="title">Load Failed.</h1>
+  
+  <main id="btns"></main>
+  
+  <br>
+  <form action="index.html">
+    <label for="config">Choose a Config:</label>
+    <select id="config" name="config"></select>
+    <input type="submit" id="sub" value="Submit">
+  </form>
+
+</body>
+
+<style id="override"></style>
+</html>
+
+<script>
+
+const url = new URLSearchParams(location.search);
+
+/*Get All Configs*/
+fetch("configs/.configs").then
+  (function(response) {
+  return response.text();
+}).then(function(data) {
+  handleConfigs(data);
+}).catch(function(err) {
+  location.reload();
+});
+
+
+
+/* Get Default Config */
+fetch("configs/Default.json").then(function(response) {
+  return response.json();
+}).then(function(data) {
+  handleData(data);
+  if(url.get("config")==null){
+    moveAway();
+  }
+}).catch(function(err) {
+  location.reload();
+});
+
+/* Get Custom Config */
+if(url.get("config")!=null){
+  fetch("configs/"+url.get("config")+".json").then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+    handleData(data);
+    moveAway();
+  }).catch(function(err) {
+    alert("Invalid Configuration! Will NOT load!");
+    return;
+  });
+}
+
+
+
+
+
+function handleData(data){
+  $("#title").text(data["title"])
+  if(data["title"]!="Steam Web Hub"){
+    document.title = "SWH - "+data["title"]
+  }
+  
+  data["buttons"].forEach((val)=>{
+    addBtn(val);
+    console.log(val);
+  })
+  
+  if(data["colors"]!=undefined){
+    document.body.style.backgroundColor = data["colors"]["bg"];
+  
+    $("#override")[0].innerHTML = "*{ color:"+data["colors"]["fg"]+"}";
+  
+    $("#sub")[0].style.backgroundColor=data["colors"]["bg"];
+    
+    $("#config")[0].style.backgroundColor=data["colors"]["bg"];
+  }
+  
+}
+
+function handleConfigs(data){
+  //console.log(data);
+  //console.log($("#config"))
+  //makeOption("aaa", $("#config")[0])
+  const configs = data.split("\n");
+  configs.forEach((val)=>{
+    makeOption(val, $("#config")[0]);
+  })
+}
+
+function addBtn(value){
+  let btns = $("#btns")[0];
+  let btn = document.createElement("button");
+  let link = document.createElement("a");
+  let img = document.createElement("img");
+  let text = document.createElement("div");
+  
+  link.href=value.url;
+  
+  btn.id=value.name;
+  
+  img.src=value.image;
+  
+  text.innerHTML=value.name;
+  
+  link.appendChild(btn);
+  btn.appendChild(img);
+  btn.appendChild(text);
+  btns.appendChild(link);
+  
+}
+
+function redir(id){
+  console.log(id);
+}
+
+
+function makeOption(value, parent){
+  let opt = document.createElement("option");
+  opt.value=value;
+  opt.text=value;
+  
+  parent.appendChild(opt);
+}
+
+
+async function moveAway(){
+  var el = $("#loadingScreen")[0];
+  easeLoop(10);
+}
+
+function easeLoop(i, init) {
+  if(init == undefined){ init=i; }
+  setTimeout(function() {
+    $("#loadingScreen").css({"opacity": i/init});
+    if (--i) easeLoop(i, init);
+    else $("#loadingScreen").remove();
+  }, 30)
+};
+</script>
