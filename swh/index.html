@@ -39,7 +39,7 @@
 const url = new URLSearchParams(location.search);
 
 /*Get All Configs*/
-fetch("configs/.configs").then
+fetch("configs.txt").then
   (function(response) {
   return response.text();
 }).then(function(data) {
