@@ -15,7 +15,7 @@
       "name":"Youtube"
     }, {
       "image":"images/piptube.png",
-      "url":"piptube/",
+      "url":"swh/piptube/",
       "name":"PIPTube"
     }
   ]
