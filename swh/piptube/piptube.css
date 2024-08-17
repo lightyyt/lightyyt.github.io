@@ -1,0 +1,32 @@
+*{
+    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: #222223;
+}
+
+form{
+    padding: 1vw;
+    background-color: #37373d;
+    display: flex;
+    max-height: 15%;
+}
+
+input{
+    margin-top:5%;
+    height: 15%;
+    width: 100%;
+    margin-left: 2%;
+}
+#sub{
+    width:25%;
+    font-family: 'Roboto Mono',Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+img{
+    width:15%;
+}

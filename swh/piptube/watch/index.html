@@ -1,0 +1,64 @@
+<!--
+Possible Formats:
+https://www.youtube.com/watch?v=5oEjsFBoGAk
+5oEjsFBoGAk
+-->
+<html>
+    <head>
+        <script src="../../jquery.js"></script>
+        <style>
+            html, head, body{margin:0px; background-color: black;}
+            #ytifr{width:100%; height:100%;}
+            a{position:absolute;}
+            img{
+                width:25%;
+                margin:5%;
+                border: none;
+                color: white;
+                text-align: center;
+                font-size: 16px;
+                /*opacity: 0%;*/
+                transition: 0.8s;
+            }
+            #ih{
+                opacity: 0%;
+                margin:2%;
+                width:20%;
+            }
+            #ih:hover { opacity: 100%; margin:5%; width:30%;}
+        </style>
+        <title>PIPtube Video</title>
+    </head>
+    <body>
+        <a href="../"><img src="../piptube.png" id="img"></img></a>
+        <iframe 
+            id="ytifr"
+            src="https://www.youtube.com/embed/"
+            title="YouTube video player"
+            frameborder="0"
+            allow=""
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </body>
+</html>
+
+<script>
+//Put GET Arguments in a Variable
+const params = new URLSearchParams(document.location.search);
+const link = params.get("v");
+let video ="";
+if(link.startsWith("https://") || link.startsWith("www.youtube") || link.startsWith("youtube.")){
+    const linkParams = new URLSearchParams( new URL(link).search );
+    video = linkParams.get("v");
+    console.log(video);
+}else{
+    video = link;
+}
+
+//Set IFrame Src to video
+document.getElementById("ytifr").src = "https://www.youtube.com/embed/"+video;
+
+//Make button have transition
+$("#img")[0].opacity = 1;
+setTimeout(()=>{$("#img")[0].id = "ih"},1000)
+</script>

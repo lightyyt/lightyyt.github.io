@@ -7,20 +7,21 @@ body{
 }
 
 img{
-  width: 20vw;
+  width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 5vw;
+  border-radius: 25%;
 }
 
 br{
   font-size:10vw;
 }
 button{
+  max-width:20%;
   background-color: #666;
   border: 0px;
-  border-radius: 5vw;
-  padding: 1vw;
-  margin: 1vw;
+  border-radius: 2vw;
+  padding: 2.5%;
+  margin: 2.5%;
 }
 div{
   font-size: 3vw;
