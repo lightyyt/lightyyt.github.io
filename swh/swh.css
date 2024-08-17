@@ -9,17 +9,17 @@ body{
 img{
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 25%;
+  border-radius: 4vw;
 }
 
 br{
-  font-size:10vw;
+  font-size: 10vw;
 }
 button{
-  max-width:20%;
+  max-width: 20%;
   background-color: #666;
   border: 0px;
-  border-radius: 2vw;
+  border-radius: 4vw;
   padding: 2.5%;
   margin: 2.5%;
 }
