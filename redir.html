@@ -1,8 +1,8 @@
 <script>
 	const re = document.location.href.split("#")[1];
-	if(re=="twitter"){
+	if(re=="bluesky"){
 		setTimeout(function(){
-			document.location.href = "https://x.com/lightyboiiii";
+			document.location.href = "https://bsky.app/profile/lightyyt.bsky.social";
 			
 		}, 1000);
 	}
@@ -17,5 +17,14 @@
 			document.location.href = "https://discord.com/invite/dzmap8Sgsv";
 			
 		}, 1000);
+	}else if(re=="twitter"){
+	  setTimeout(function(){
+		  document.getElementById("twitter_warn").innerHTML = "Hey! I don't use Twitter anymore! You can either go to the <a href=\"/index.html\">Homepage</a> or you can go to my <a href=\"https://bsky.app/profile/lightyyt.bsky.social\">Bluesky!</a>"
+		}, 1000);
 	}
 </script>
+
+<link rel="stylesheet" href="css/index.css">
+<h1>Lightys Website</h1>
+<h2>You'll be redirected shortly...</h2>
+<div style="text-align:center;" id="twitter_warn"></div>
