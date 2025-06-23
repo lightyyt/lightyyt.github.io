@@ -1,70 +1,93 @@
-*{margin:0;padding:0; color:white;}
-body{
-  background-color: #333333;
+/* CSS For index.html */
+:root {
+  --lg-gap-size: 1rem;
 }
-h1{
-  width:100%;
-  font-size:10vw;
-  padding:2%;
+
+body {
+  margin: 0.5rem;
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  gap: var(--lg-gap-size);
+  padding-bottom: var(--lg-gap-size);
+  flex: 1;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-me {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--lg-subtext);
+  padding-top:0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+.about-me div:nth-child(1) {
+  font-size:1.5rem;
+  color:var(--lg-text);
+}
+
+.about-me div:nth-child(2) {
+  font-size: 1.1rem;
+}
+
+.main-info {
+  font-size: 1rem;
+  flex: 1;
+  max-width: none;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+.links {
+  padding:0.3rem;
+  display:grid;
+}
+.links div:nth-child(1) {
+  font-size: 1.3rem;
+  text-align:center;
+}
+
+.links div:nth-child(2) {
   text-align: center;
 }
-h2{
-  width:100%;
-  font-size:7vw;
-  border-bottom: 0.25vh solid #323436;
-  text-align: center;
-  padding:1%;
-  padding-top:3%;
-}
-p{
-  border-bottom: 0.5vh solid #303234;
-}
-main{
-  background-color: #434548;
-  border-radius: 1vw;
-  padding:2%;
-  padding-top:0%;
-  padding-bottom:5%;
+
+.links img {
+  background-color: white;
+  width: 4.5rem;
+  padding: 0.5rem;
+  object-fit: contain;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  transition: 0.2s;
+  margin:0.1rem;
 }
 
-
-.social{
-  width:20%;
-  padding:5%;
-  transition: 0.3s;
+.links img:hover {
+  padding: 0.4rem;
+  margin: 0.2rem;
+  background-color: #e0e0e0;
 }
 
-.social:hover {
-  width: 25%;
-  padding: 2.5% 0%;
-}
-
-
-.socials{
-  text-align:center;
-  justify-content:center;
-  min-height:30%;
-}
-
-.download{
-  width:20%;
-  padding:5%;
-  transition: 0.3s;
-}
-
-.download:hover {
-  width: 25%;
-  padding: 0%;
-}
-/* Fix First Element Padding bug */
-.download:nth-child(1):hover{
-  width:25%;
-  padding:2.5% 0%;
-}
-
-
-.downloads{
-  text-align:center;
-  justify-content:center;
-  min-height:30%;
+.links img:active {
+  padding: 0.6rem;
+  margin:0rem;
+  background-color: #606060;
 }

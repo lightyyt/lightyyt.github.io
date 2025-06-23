@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,28 @@
 <meta content="#FFA500" data-react-helmet="true" name="theme-color" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/download.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js"></script>
   <title>Lightys Website</title>
 </head>
 <body>
   <h1>Lightys Website</h1>
   <main>
-    <h2>Downloads</h2>
+    <h2>Socials</h2>
+    <p class="socials">
+      <img class="social" src="res/discord.png" onclick="redir(0)">
+      <img class="social" src="res/bluesky.png" onclick="redir(1)">
+      <img class="social" src="res/youtube.png" onclick="redir(2)">
+    </p>
+    <h2><a href="/downloads/index.html">
+      Downloads
+    </a></h2>
     <p class="downloads">
-      
-      <img src="/res/dl/minecraft.png" class="download" style="opacity:0;">
+      <img class="download">
       <a href="/downloads/minecraft/index.html"><img src="/res/dl/minecraft.png" class="download"></a>
       <img class="download">
     </p>
+  <div style="font-size:1vw; text-align:center;">This Websites Owner (Lighty) does <span style="font-weight:bold;">NOT</span> store any user data, nor use cookies at any point! </div>
   </main>
 </body>
 </html>

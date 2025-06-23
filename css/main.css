@@ -1,0 +1,17 @@
+:root {
+  --lg-background: #aa9;
+  --lg-element: #997;
+  --lg-corner:1rem;
+  --lg-text:white;
+  --lg-subtext:#444;
+}
+
+html, head, body {
+  background-color: var(--lg-background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div {
+  background-color: var(--lg-element);
+  border-radius: var(--lg-corner);
+}

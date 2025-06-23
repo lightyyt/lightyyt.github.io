@@ -1,0 +1,11 @@
+/* CSS For Profile Pictures */
+:root {
+  --lg-profile-picture-size: 10rem;
+  --lg-profile-picture-corner: 1rem;
+}
+
+.lg_pfp {
+  width: var(--lg-profile-picture-size);
+  border-radius: var(--lg-profile-picture-corner);
+  aspect-ratio: 1;
+}
