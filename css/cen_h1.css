@@ -1,0 +1,12 @@
+h1 {
+  text-align:center;
+  width: 100%;
+}
+
+.main-info {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  min-height:0;
+  height:auto;
+}

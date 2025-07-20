@@ -1,6 +1,7 @@
 /* CSS For Profile Pictures */
 :root {
   --lg-profile-picture-size: 10rem;
+  --lg-small-profile-picture-size: 7rem;
   --lg-profile-picture-corner: 1rem;
 }
 
@@ -8,4 +9,30 @@
   width: var(--lg-profile-picture-size);
   border-radius: var(--lg-profile-picture-corner);
   aspect-ratio: 1;
+  animation-name: tobig;
+  animation-duration: 0.5s;
+}
+
+.smallpfp {
+  width: var(--lg-small-profile-picture-size);
+  border-radius: var(--lg-profile-picture-corner);
+  aspect-ratio: 1;
+  animation-name: tosmall;
+  animation-duration: 0.5s;
+}
+
+.smallimg {
+  width: var(--lg-small-profile-picture-size);
+  border-radius: var(--lg-profile-picture-corner);
+  aspect-ratio: 1;
+}
+
+@keyframes tosmall{
+  from { width: var(--lg-profile-picture-size); }
+  to { width: var(--lg-small-profile-picture-size); }
+}
+
+@keyframes tobig{
+  to { width: var(--lg-profile-picture-size); }
+  from { width: var(--lg-small-profile-picture-size); }
 }

@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="/css/pfp.css">
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/cen_h1.css">
+  <link rel="stylesheet" href="/css/project.css">
   <!--Main Code-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,28 +43,30 @@
   <br/>
   <main> <!-- Main Content -->
     <span class="left">
-      <img src="/res/me.jpg" class="lg_pfp"></img>
-      <div class="about-me">
-      <div>Lighty</div>
-      <div>he/him</div>
-      Furry / Kitsune
-      </div>
+      <img src="/res/me.jpg" class="smallpfp"></img>
     </span>
     <div class="main-info">
-      Hello!<br/>
-      I'm Lighty!<br/>
-      Thanks for checking out my Website!<br/>
-      To view other pages, press the Hamburger menu (&#9776;)!
+      <h1>My Projects</h1>
     </div>
     </span>
   </main>
-  <div class="links">
-    <div>Links:</div>
-    <div>
-      <img onclick="redir(1)" src="/res/youtube.png"></img>
-      <img onclick="redir(2)" src="/res/bluesky.png"></img>
-      <img onclick="redir(3)" src="/res/discord.png"></img>
-    </div>
+  
+  <div>
+    <button onclick="redir(4)">
+    <project-card 
+  img="/res/chuckle.png" 
+  info="Chuckle Bot (Python)" 
+  desc="A silly Discord Bot with fun features!"></project-card>
+    </button>
+    <hr>
+    <button onclick="redir(5)">
+    <project-card 
+  img="noimg" 
+  info="Trixune (C++)" 
+  desc="A few tools for your SFML 3.0.x Projects with ImGui"></project-card>
+    </button>
+    <hr>
   </div>
 </body>
 </html>
+<script src="/js/project.js"></script>

@@ -9,7 +9,7 @@ body {
   background: #f0f0f0;
 }
 
-main {
+main, .project {
   display: flex;
   flex-direction: row;
   gap: var(--lg-gap-size);
@@ -22,6 +22,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
 
 img {
   background-color: #ccc;

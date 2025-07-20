@@ -1,17 +1,103 @@
 :root {
   --lg-background: #aa9;
-  --lg-element: #997;
-  --lg-corner:1rem;
-  --lg-text:white;
-  --lg-subtext:#444;
+  --lg-element: #bba;
+  --lg-corner: 1rem;
+  --lg-text: black;
+  --lg-subtext: #444;
 }
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --lg-background: #1a1a1a;
+  --lg-element: #2a2a2a;
+  --lg-text: #eee;
+  --lg-subtext: #aaa;
+}
+
 
 html, head, body {
   background-color: var(--lg-background);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--lg-text);
+}
+
+/* Disable transitions when this class is present */
+html.no-transition, .no-transition * {
+  transition: none !important;
+}
+
+/*html, head, body, div, main, a, span*/
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 div {
   background-color: var(--lg-element);
   border-radius: var(--lg-corner);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 1rem;
+  background-color: var(--lg-element);
+  border-radius: var(--lg-corner);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--lg-text);
+  text-align: left;
+  flex: 1;
+}
+
+#hamburger {
+  font-size: 1.5rem;
+  padding: 0.4rem 0.6rem;
+  background: none;
+  color: var(--lg-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  background-color: var(--lg-element);
+  z-index: 999; /* In front */
+  transition: width 0.3s ease;
+  
+  padding-top: 2rem;
+  box-shadow: -5px 0 1rem rgba(0,0,0,0.1);
+}
+
+/* Menu content style */
+.menu ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.menu li {
+  padding: 1rem 0px;
+  font-size: 1.2rem;
+  color: var(--lg-text);
+  border-bottom: 1px solid var(--lg-background);
+}
+
+.menu button {
+  padding: 0px;
+  font-size: 1.2rem;
+  color: var(--lg-text);
+  background: none;
+  border: none;
+  width:100%;
+  text-align: left;
 }
