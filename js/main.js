@@ -4,7 +4,8 @@ function redir(site) {
     "https://youtube.com/@LightyCode",
     "https://bsky.app/profile/lightyyt.bsky.social",
     "https://discord.gg/dzmap8Sgsv",
-    "https://github.com/lightyyt/Chuckle"
+    "https://github.com/lightyyt/Chuckle",
+    "https://github.com/trixune/trixune"
   ]
   let red = sites[site];
   window.location = red;
