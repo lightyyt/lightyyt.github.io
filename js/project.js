@@ -33,7 +33,7 @@
       wrapper.innerHTML +=`
         </span>
         <div class="main-info" style="flex-direction:column;">
-          <div class="title">${info}</div>
+          <div class="titlealt">${info}</div>
           <div class="desc">${desc}</div>
         </div>
       `;
