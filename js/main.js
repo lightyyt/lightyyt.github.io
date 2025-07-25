@@ -5,7 +5,9 @@ function redir(site) {
     "https://bsky.app/profile/lightyyt.bsky.social",
     "https://discord.gg/dzmap8Sgsv",
     "https://github.com/lightyyt/Chuckle",
-    "https://github.com/trixune/trixune"
+    "https://github.com/trixune/trixune",
+    "/CubeMosaic/",
+    "https://github.com/lightyyt/CubeMosaic"
   ]
   let red = sites[site];
   window.location = red;
